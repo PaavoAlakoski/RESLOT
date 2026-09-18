@@ -1,9 +1,9 @@
-import { IOSDevice } from './ios/IOSDevice';
-import { FounderAlert } from './founder/FounderAlert';
-import { FounderPool } from './founder/FounderPool';
-import { FounderMatched } from './founder/FounderMatched';
-import { InviteDialog } from './overlays/InviteDialog';
-import type { MatchmakingDemoReturn } from '../hooks/useMatchmakingDemo';
+import { IOSDevice } from '../ios/IOSDevice';
+import { FounderAlert } from './FounderAlert';
+import { FounderPool } from './FounderPool';
+import { FounderMatched } from './FounderMatched';
+import { InviteDialog } from '../overlays/InviteDialog';
+import type { MatchmakingDemoReturn } from '../../hooks/useMatchmakingDemo';
 
 interface FounderDeviceProps {
   hook: MatchmakingDemoReturn;

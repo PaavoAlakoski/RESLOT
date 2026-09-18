@@ -1,6 +1,6 @@
 import { useMatchmakingDemo } from './hooks/useMatchmakingDemo';
-import { FounderDevice } from './components/FounderDevice';
-import { InvestorDevice } from './components/InvestorDevice';
+import { FounderDevice } from './components/founder/FounderDevice';
+import { InvestorDevice } from './components/investor/InvestorDevice';
 
 export default function App() {
   const hook = useMatchmakingDemo();

@@ -1,10 +1,10 @@
-import { IOSDevice } from './ios/IOSDevice';
-import { InvestorAlert } from './investor/InvestorAlert';
-import { InvestorFeed } from './investor/InvestorFeed';
-import { InvestorDetail } from './investor/InvestorDetail';
-import { InvestorMatched } from './investor/InvestorMatched';
-import { WaitingDialog } from './overlays/WaitingDialog';
-import type { MatchmakingDemoReturn } from '../hooks/useMatchmakingDemo';
+import { IOSDevice } from '../ios/IOSDevice';
+import { InvestorAlert } from './InvestorAlert';
+import { InvestorFeed } from './InvestorFeed';
+import { InvestorDetail } from './InvestorDetail';
+import { InvestorMatched } from './InvestorMatched';
+import { WaitingDialog } from '../overlays/WaitingDialog';
+import type { MatchmakingDemoReturn } from '../../hooks/useMatchmakingDemo';
 
 interface InvestorDeviceProps {
   hook: MatchmakingDemoReturn;
