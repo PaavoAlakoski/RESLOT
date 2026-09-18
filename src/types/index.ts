@@ -10,6 +10,8 @@ export type FounderProfile = {
   reason: string;
   chips: string[];
   long: string;
+  scoreSource?: 'openai' | 'fallback';
+  scoreModel?: string | null;
 };
 
 export type Chip = { label: string };

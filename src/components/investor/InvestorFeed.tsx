@@ -35,8 +35,13 @@ export function InvestorFeed({ clock, feed, feedEmpty, declinedBy }: InvestorFee
                   </span>
                 )}
               </div>
-              <div style={{ fontSize: 17, fontFamily: 'var(--font-heading)', color: f.scoreColor, flex: 'none', lineHeight: 1.2 }}>
-                {f.score}/10
+              <div style={{ flex: 'none', textAlign: 'right' }}>
+                <div style={{ fontSize: 17, fontFamily: 'var(--font-heading)', color: f.scoreColor, lineHeight: 1.2 }}>
+                  {f.score}/10
+                </div>
+                <div style={{ marginTop: 3, fontSize: 8, letterSpacing: '.08em', textTransform: 'uppercase', color: f.scoreSource === 'openai' ? 'var(--color-accent-300)' : 'var(--color-neutral-500)' }}>
+                  {f.scoreSource === 'openai' ? 'OpenAI' : 'Fallback'}
+                </div>
               </div>
             </div>
             <p className="card-body" style={{ margin: 0, opacity: 0.78 }}>

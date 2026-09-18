@@ -16,6 +16,22 @@ export default function App() {
         position: 'relative',
       }}
     >
+      <div
+        style={{
+          position: 'absolute',
+          top: 24,
+          left: 28,
+          display: 'flex',
+          alignItems: 'center',
+          gap: 8,
+          fontSize: 12,
+          color: hook.error ? '#b42318' : 'var(--color-neutral-600)',
+        }}
+      >
+        <span style={{ width: 8, height: 8, borderRadius: '50%', background: hook.error ? '#d92d20' : hook.loading ? '#e0a42d' : '#32a56b' }} />
+        {hook.error ? `API error: ${hook.error}` : hook.loading ? 'Matching…' : `Backend connected · ${hook.apiMode}`}
+      </div>
+
       <button
         className="btn btn-icon"
         aria-label="Reset demo"

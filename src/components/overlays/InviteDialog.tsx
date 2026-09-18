@@ -2,9 +2,12 @@ interface InviteDialogProps {
   inviteLeft: number;
   accept: () => void;
   declineInvite: () => void;
+  investorName: string;
+  investorMeta: string;
+  investorInitials: string;
 }
 
-export function InviteDialog({ inviteLeft, accept, declineInvite }: InviteDialogProps) {
+export function InviteDialog({ inviteLeft, accept, declineInvite, investorName, investorMeta, investorInitials }: InviteDialogProps) {
   return (
     <div
       style={{
@@ -37,13 +40,13 @@ export function InviteDialog({ inviteLeft, accept, declineInvite }: InviteDialog
               fontFamily: 'var(--font-heading)',
             }}
           >
-            AV
+            {investorInitials}
           </span>
           <div>
             <div className="dialog-title" style={{ fontSize: 18 }}>
-              Aino Virtanen
+              {investorName}
             </div>
-            <div style={{ fontSize: 12, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>Partner · Northwind Ventures</div>
+            <div style={{ fontSize: 12, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{investorMeta}</div>
           </div>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>

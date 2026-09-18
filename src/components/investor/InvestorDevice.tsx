@@ -22,7 +22,7 @@ export function InvestorDevice({ hook, now }: InvestorDeviceProps) {
         {hook.detail && <InvestorDetail detail={hook.detail} showReasons={hook.showReasons} closeDetail={hook.closeDetail} />}
 
         {hook.iMatched && (
-          <InvestorMatched clock={hook.clock} iProfile={hook.iProfile} iProfileLabel={hook.iProfileLabel} toggleIProfile={hook.toggleIProfile} />
+          <InvestorMatched clock={hook.clock} iProfile={hook.iProfile} iProfileLabel={hook.iProfileLabel} toggleIProfile={hook.toggleIProfile} meeting={hook.meeting} />
         )}
 
         {hook.iWaiting && <WaitingDialog pendingName={hook.pendingName} waitLeft={hook.waitLeft} waitPct={hook.waitPct} cancelPick={hook.cancelPick} />}

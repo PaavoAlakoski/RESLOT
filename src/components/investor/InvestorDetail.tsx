@@ -52,7 +52,12 @@ export function InvestorDetail({ detail, showReasons, closeDetail }: InvestorDet
       <p style={{ margin: '0 0 16px', fontSize: 13, opacity: 0.8 }}>{detail.long}</p>
       {showReasons && (
         <div className="card" style={{ gap: 6, padding: 14 }}>
-          <div className="card-kicker">Why this rank</div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+            <div className="card-kicker">Why this rank</div>
+            <span className={detail.scoreSource === 'openai' ? 'tag tag-accent' : 'tag tag-neutral'} style={{ fontSize: 8, padding: '2px 6px' }}>
+              {detail.scoreSource === 'openai' ? detail.scoreModel ?? 'OpenAI' : 'Fallback scorer'}
+            </span>
+          </div>
           <p className="card-body" style={{ margin: 0, opacity: 0.78 }}>
             {detail.reason}
           </p>

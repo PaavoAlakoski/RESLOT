@@ -19,10 +19,19 @@ export function FounderDevice({ hook, now }: FounderDeviceProps) {
         {hook.fPool && <FounderPool clock={hook.clock} browsing={hook.browsing} leave={hook.leave} />}
 
         {hook.fMatched && (
-          <FounderMatched clock={hook.clock} fProfile={hook.fProfile} fProfileLabel={hook.fProfileLabel} toggleFProfile={hook.toggleFProfile} />
+          <FounderMatched clock={hook.clock} fProfile={hook.fProfile} fProfileLabel={hook.fProfileLabel} toggleFProfile={hook.toggleFProfile} meeting={hook.meeting} />
         )}
 
-        {hook.state.invited && <InviteDialog inviteLeft={hook.inviteLeft} accept={hook.accept} declineInvite={hook.declineInvite} />}
+        {hook.state.invited && (
+          <InviteDialog
+            inviteLeft={hook.inviteLeft}
+            accept={hook.accept}
+            declineInvite={hook.declineInvite}
+            investorName={hook.vc?.partner ?? 'Investor'}
+            investorMeta={hook.vc ? `${hook.vc.role} · ${hook.vc.firmName}` : 'Loading profile…'}
+            investorInitials={hook.vc?.initials ?? 'VC'}
+          />
+        )}
       </div>
     </IOSDevice>
   );
