@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 
-const startupsDocument = JSON.parse(readFileSync(new URL('../data/slush_startups_mock_data_1.json', import.meta.url), 'utf8'));
-const vcDocument = JSON.parse(readFileSync(new URL('../data/slush_vc_firm_mock_data_1.json', import.meta.url), 'utf8'));
+const startupsDocument = JSON.parse(readFileSync(new URL('../mockdata/mock_startups.json', import.meta.url), 'utf8'));
+const vcDocument = JSON.parse(readFileSync(new URL('../mockdata/mock_investor.json', import.meta.url), 'utf8'));
 
 function initials(name) {
   return name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase();

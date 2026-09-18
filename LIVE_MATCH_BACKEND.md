@@ -4,8 +4,8 @@ The existing two-phone frontend is connected to this API without changing its ov
 
 The backend reads the repository's existing fictional datasets directly:
 
-- `data/slush_startups_mock_data_1.json`
-- `data/slush_vc_firm_mock_data_1.json`
+- `mockdata/mock_startups.json`
+- `mockdata/mock_investor.json`
 
 Emergency availability, invites, and confirmed meetings are kept in memory.
 
