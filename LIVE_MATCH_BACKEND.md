@@ -61,6 +61,58 @@ Example candidate request:
 curl http://localhost:8787/api/vcs/tundra-peak/candidates
 ```
 
+## Deploy on Railway
+
+This app can be deployed as a **single service** to Railway, combining the frontend and backend into one Node process.
+
+### Setup
+
+1. Create a new Railway project at https://railway.app
+2. Connect this GitHub repository to the project
+3. In the Railway dashboard, add these environment variables:
+   - `OPENAI_API_KEY` — your OpenAI project API key (optional; app works without it)
+   - `OPENAI_MODEL` — defaults to `gpt-4.1-mini`, can override if desired
+   - `PORT` — set by Railway automatically (typically 8080), do NOT set manually
+
+### How it works
+
+Railway will automatically:
+1. Run `npm install` to install dependencies
+2. Run `npm run build` to compile TypeScript and build the frontend with Vite (produces `dist/`)
+3. Run `npm start` to start the Node server (`node backend/server.mjs`)
+
+The server then:
+- Serves the compiled frontend from `dist/` for `/` and other non-API routes
+- Handles all `/api/*` routes via the existing backend logic
+- Keeps matchmaking state in memory (pool, invites, meetings) as a persistent single-process service
+
+### Frontend API routing
+
+On Railway, the frontend defaults to `/api` (relative path to same origin). The backend serves both the SPA and the API from a single URL. To override during local development if needed, set:
+
+```bash
+VITE_LIVE_MATCH_API_URL=http://localhost:8787/api
+```
+
+### Local two-terminal dev (unchanged)
+
+The existing local development flow still works exactly as before:
+
+```bash
+# Terminal 1: frontend (Vite dev server on 5173)
+npm run dev
+
+# Terminal 2: backend (on 8787)
+node backend/server.mjs
+```
+
+To use local two-process dev with separate origins, set the override:
+
+```bash
+# Terminal 2: with env var
+VITE_LIVE_MATCH_API_URL=http://localhost:8787/api npm run dev
+```
+
 ## Verify
 
 ```bash

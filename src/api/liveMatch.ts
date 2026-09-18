@@ -66,7 +66,7 @@ export type Invite = {
   expiresAt: number;
 };
 
-const API_URL = import.meta.env.VITE_LIVE_MATCH_API_URL || 'http://localhost:8787/api';
+const API_URL = import.meta.env.VITE_LIVE_MATCH_API_URL || '/api';
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_URL}${path}`, {
