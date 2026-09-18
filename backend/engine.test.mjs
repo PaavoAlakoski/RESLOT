@@ -38,6 +38,6 @@ test('expired invites cannot be accepted', async () => {
   const engine = new MatchmakingEngine({ ai: fakeAi, now: () => clock });
   engine.joinPool('1');
   const invite = engine.createInvite({ vcId: 'tundra-peak', startupId: '1' });
-  clock += 46000;
+  clock += 61000;
   await assert.rejects(() => engine.respondToInvite(invite.id, 'accepted'), /already expired/);
 });

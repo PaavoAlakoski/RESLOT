@@ -86,7 +86,7 @@ export class MatchmakingEngine {
       durationMinutes,
       status: 'pending',
       createdAt,
-      expiresAt: createdAt + 45000,
+      expiresAt: createdAt + 60000,
     };
     this.invites.set(invite.id, invite);
     return invite;

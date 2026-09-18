@@ -49,15 +49,15 @@ export default function App() {
         </svg>
       </button>
 
-      <div style={{ display: 'flex', gap: 110, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }}>
+      <div style={{ display: 'flex', gap: 220, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center' }}>
           <h2 style={{ margin: 0, color: 'var(--color-neutral-900)', fontSize: 34 }}>Founder</h2>
           <div style={{ border: '4px solid #0c0d14', borderRadius: 52, display: 'flex' }}>
             <FounderDevice hook={hook} now={hook.now} />
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'flex-start' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, alignItems: 'center' }}>
           <h2 style={{ margin: 0, color: 'var(--color-neutral-900)', fontSize: 34 }}>Investor</h2>
           <div style={{ border: '4px solid #0c0d14', borderRadius: 52, display: 'flex' }}>
             <InvestorDevice hook={hook} now={hook.now} />

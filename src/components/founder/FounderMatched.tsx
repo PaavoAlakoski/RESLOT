@@ -44,7 +44,7 @@ export function FounderMatched({ clock, fProfile, fProfileLabel, toggleFProfile,
       </div>
       <div style={{ marginTop: 16, paddingBottom: 8 }}>
         <button className="btn btn-secondary btn-block" onClick={toggleFProfile}>{fProfileLabel}</button>
-        {fProfile && <MeetingBrief brief={meeting.briefs.founder} source={meeting.briefs.meta.source} model={meeting.briefs.meta.model} />}
+        {fProfile && <MeetingBrief brief={meeting.briefs.founder} />}
       </div>
     </div>
   );

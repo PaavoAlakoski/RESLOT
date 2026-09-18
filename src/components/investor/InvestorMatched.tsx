@@ -44,7 +44,7 @@ export function InvestorMatched({ clock, iProfile, iProfileLabel, toggleIProfile
       </div>
       <div style={{ marginTop: 16, paddingBottom: 8 }}>
         <button className="btn btn-secondary btn-block" onClick={toggleIProfile}>{iProfileLabel}</button>
-        {iProfile && <MeetingBrief brief={meeting.briefs.investor} source={meeting.briefs.meta.source} model={meeting.briefs.meta.model} />}
+        {iProfile && <MeetingBrief brief={meeting.briefs.investor} />}
       </div>
     </div>
   );

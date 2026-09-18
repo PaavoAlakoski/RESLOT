@@ -7,7 +7,7 @@ export type MatchmakingDemoReturn = ReturnType<typeof useMatchmakingDemo>;
 
 const FOUNDER_ID = '33';
 const VC_ID = 'tundra-peak';
-const CONFIRM_WINDOW = 45;
+const CONFIRM_WINDOW = 60;
 const POOL_COUNTDOWN = 252;
 const SLOT_MIN = 14 * 60 + 30;
 
@@ -162,7 +162,7 @@ export function useMatchmakingDemo() {
         ...current,
         pendingId: id,
         iStage: 'waiting',
-        waitLeft: id === FOUNDER_ID ? CONFIRM_WINDOW : 6,
+        waitLeft: CONFIRM_WINDOW,
         declinedBy: null,
         detailId: null,
         invited: id === FOUNDER_ID,
@@ -183,7 +183,7 @@ export function useMatchmakingDemo() {
             waitLeft: 0,
             declinedBy: selected?.name ?? 'The founder',
           }));
-        }, 6000);
+        }, CONFIRM_WINDOW * 1000);
       }
     } catch (cause) {
       reportError(cause);
@@ -280,7 +280,7 @@ export function useMatchmakingDemo() {
   const clock = `${mm}:${String(state.secs % 60).padStart(2, '0')}`;
   const nowMin = SLOT_MIN - Math.ceil(state.secs / 60);
   const now = `${Math.floor(nowMin / 60)}:${String(nowMin % 60).padStart(2, '0')}`;
-  const waitWindow = state.pendingId === FOUNDER_ID ? CONFIRM_WINDOW : 6;
+  const waitWindow = CONFIRM_WINDOW;
 
   return {
     state,
