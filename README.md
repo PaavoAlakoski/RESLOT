@@ -1,4 +1,4 @@
-# Slush Rematch
+# Slush RESLOT
 
 A speed-matchmaking demo for Slush: when a scheduled 1:1 slot falls through, the freed-up meeting gets refilled from a live pool. Two mirrored iOS-style device mockups — **Founder** and **Investor** — show both sides of the flow in real time, matched by a small Node backend that scores investor↔startup fit with OpenAI (with a deterministic fallback when no API key is set).
 
