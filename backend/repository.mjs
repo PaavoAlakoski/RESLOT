@@ -7,6 +7,10 @@ function initials(name) {
   return name.split(/\s+/).map((part) => part[0]).join('').slice(0, 2).toUpperCase();
 }
 
+function slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
 export const startupProfiles = startupsDocument.startups.map((startup) => ({
   id: String(startup.id),
   companyName: startup.company_name,
@@ -25,33 +29,36 @@ export const startupProfiles = startupsDocument.startups.map((startup) => ({
   website: startup.website,
 }));
 
-const rawVc = vcDocument.firm;
-const leadPartner = rawVc.partners[0];
-
-export const vcProfiles = [{
-  id: 'tundra-peak',
-  firmName: rawVc.firm_name,
-  partner: leadPartner.name,
-  role: leadPartner.title,
-  initials: initials(leadPartner.name),
-  photoUrl: leadPartner.photo_url,
-  partners: rawVc.partners.map((p) => ({
-    name: p.name,
-    title: p.title,
-    initials: initials(p.name),
-    photoUrl: p.photo_url,
-  })),
-  thesis: rawVc.investment_thesis.description,
-  stageFocus: rawVc.investment_thesis.stage_focus,
-  industries: rawVc.investment_thesis.industries,
-  geographies: rawVc.investment_thesis.geographies,
-  checkSizeUsd: {
-    min: rawVc.check_size_usd.typical_min,
-    max: rawVc.check_size_usd.typical_max,
-  },
-  previousInvestments: rawVc.previous_investments,
-  avoids: rawVc.investment_thesis.avoids,
-}];
+// Firm #1 (Tundra Peak Ventures) keeps its existing short slug for backward
+// compatibility with VC_ID='tundra-peak' already hardcoded in the frontend,
+// tests and docs. Every other firm gets a slug derived from its name.
+export const vcProfiles = vcDocument.firms.map((rawVc) => {
+  const leadPartner = rawVc.partners[0];
+  return {
+    id: rawVc.id === 1 ? 'tundra-peak' : slugify(rawVc.firm_name),
+    firmName: rawVc.firm_name,
+    partner: leadPartner.name,
+    role: leadPartner.title,
+    initials: initials(leadPartner.name),
+    photoUrl: leadPartner.photo_url,
+    partners: rawVc.partners.map((p) => ({
+      name: p.name,
+      title: p.title,
+      initials: initials(p.name),
+      photoUrl: p.photo_url,
+    })),
+    thesis: rawVc.investment_thesis.description,
+    stageFocus: rawVc.investment_thesis.stage_focus,
+    industries: rawVc.investment_thesis.industries,
+    geographies: rawVc.investment_thesis.geographies,
+    checkSizeUsd: {
+      min: rawVc.check_size_usd.typical_min,
+      max: rawVc.check_size_usd.typical_max,
+    },
+    previousInvestments: rawVc.previous_investments,
+    avoids: rawVc.investment_thesis.avoids,
+  };
+});
 
 // Availability is live state rather than a property of the directory dataset.
 // These IDs deliberately include strong, middling, and weak profile fits.
