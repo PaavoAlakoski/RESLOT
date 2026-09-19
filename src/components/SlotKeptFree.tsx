@@ -5,10 +5,7 @@ interface SlotKeptFreeProps {
 export function SlotKeptFree({ clock }: SlotKeptFreeProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', animation: 'noct-rise .4s ease both' }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 64 }}>
-        <span style={{ fontSize: 11, letterSpacing: '.12em', textTransform: 'uppercase', color: 'color-mix(in srgb, #e9e9ed 50%, transparent)' }}>
-          14:30 slot
-        </span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', marginBottom: 64 }}>
         <span className="tag tag-outline">starts in {clock}</span>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 18, margin: 'auto 0' }}>

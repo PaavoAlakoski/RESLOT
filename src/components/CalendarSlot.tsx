@@ -33,7 +33,7 @@ export function CalendarSlot({ time, status, tone, title, subtitle }: CalendarSl
           fontFamily: 'var(--font-heading)',
           color: timeColor,
           minWidth: 42,
-          textDecorationLine: cancelled ? 'overline' : 'none',
+          textDecorationLine: cancelled ? 'line-through' : 'none',
           textDecorationColor: RED,
           textDecorationThickness: 2,
         }}

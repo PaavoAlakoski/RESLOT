@@ -5,6 +5,7 @@ export type FounderProfile = {
   seeking: string;
   initials: string;
   logoUrl: string;
+  photoUrl: string;
   founder: string;
   role: string;
   blurb: string;

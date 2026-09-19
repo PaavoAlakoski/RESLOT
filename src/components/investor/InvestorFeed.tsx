@@ -72,7 +72,7 @@ export function InvestorFeed({ clock, feed, feedEmpty, declinedBy, showReasons }
                     ))}
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                    <Avatar logoUrl={f.logoUrl} initials={f.initials} size={34} fontSize={12} />
+                    <Avatar logoUrl={f.photoUrl} initials={f.initials} size={34} fontSize={12} fit="cover" />
                     <div>
                       <div style={{ fontSize: 13 }}>{f.founder}</div>
                       <div style={{ fontSize: 11, color: 'color-mix(in srgb, #e9e9ed 50%, transparent)' }}>{f.role}</div>
@@ -92,8 +92,21 @@ export function InvestorFeed({ clock, feed, feedEmpty, declinedBy, showReasons }
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10 }}>
                 <span style={{ fontSize: 12, color: 'var(--color-accent-300)' }}>Seeking {f.seeking}</span>
-                <button className="btn btn-secondary" style={{ padding: '4px 10px', fontSize: 12 }} onClick={() => toggle(f.id)}>
-                  {isExpanded ? 'Collapse' : 'Expand'}
+                <button
+                  className="btn btn-icon"
+                  aria-label={isExpanded ? 'Collapse' : 'Expand'}
+                  style={{ padding: 6 }}
+                  onClick={() => toggle(f.id)}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 256 256"
+                    fill="currentColor"
+                    style={{ transform: isExpanded ? 'rotate(180deg)' : 'none', transition: 'transform .2s ease' }}
+                  >
+                    <path d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z" />
+                  </svg>
                 </button>
               </div>
               <button className="btn btn-primary btn-block" style={{ height: 40 }} onClick={f.pick}>

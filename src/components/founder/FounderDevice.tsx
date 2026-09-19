@@ -33,6 +33,7 @@ export function FounderDevice({ hook, now }: FounderDeviceProps) {
             investorName={hook.vc?.partner ?? 'Investor'}
             investorMeta={hook.vc ? `${hook.vc.role} · ${hook.vc.firmName}` : 'Loading profile…'}
             investorInitials={hook.vc?.initials ?? 'VC'}
+            investorPhotoUrl={hook.vc?.photoUrl}
           />
         )}
       </div>
