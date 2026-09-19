@@ -43,25 +43,17 @@ export function FounderPool({ clock, browsing, leave }: FounderPoolProps) {
               borderRadius: '50%',
               border: '1px solid var(--color-accent-700)',
               background: 'var(--color-accent-900)',
-              display: 'grid',
-              placeItems: 'center',
-              fontSize: 11,
-              letterSpacing: '.1em',
-              textTransform: 'uppercase',
-              color: 'var(--color-accent-300)',
             }}
-          >
-            In pool
-          </span>
+          />
         </div>
         <div>
-          <h4 style={{ margin: '0 0 6px' }}>You're in the pool</h4>
+          <h4 style={{ margin: '0 0 6px' }}>Finding an investor</h4>
           <p style={{ margin: 0, fontSize: 13, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{describeBrowsing(browsing)}</p>
         </div>
       </div>
       <div style={{ marginTop: 'auto' }}>
         <button className="btn btn-secondary btn-block" onClick={leave}>
-          Leave the pool
+          Leave
         </button>
       </div>
     </div>
