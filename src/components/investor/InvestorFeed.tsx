@@ -1,4 +1,5 @@
 import type { DecoratedFounder } from '../../types';
+import { Avatar } from '../Avatar';
 
 interface InvestorFeedProps {
   clock: string;
@@ -28,6 +29,7 @@ export function InvestorFeed({ clock, feed, feedEmpty, declinedBy }: InvestorFee
           <div key={f.id} className="card" style={{ padding: 14, gap: 10, boxShadow: 'var(--shadow-sm)' }}>
             <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: 12 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <Avatar logoUrl={f.logoUrl} initials={f.initials} size={26} fontSize={10} />
                 <div className="card-title">{f.name}</div>
                 {f.isNew && (
                   <span className="tag tag-accent" style={{ fontSize: 9, padding: '2px 7px' }}>

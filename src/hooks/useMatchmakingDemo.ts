@@ -41,6 +41,7 @@ function toFounder(startup: RankedStartup): FounderProfile {
     score: startup.score,
     seeking: compactUsd(startup.seekingUsd),
     initials: startup.initials,
+    logoUrl: startup.logoUrl,
     founder: startup.founder,
     role: startup.role,
     blurb: startup.description,
@@ -142,6 +143,14 @@ export function useMatchmakingDemo() {
       reportError(cause);
     }
   }, [refreshCandidates, reportError, state.iStage]);
+
+  const skipFounder = useCallback(() => {
+    setState((current) => ({ ...current, fStage: 'skipped' }));
+  }, []);
+
+  const skipInvestor = useCallback(() => {
+    setState((current) => ({ ...current, iStage: 'skipped' }));
+  }, []);
 
   const browse = useCallback(() => {
     setState((current) => ({ ...current, iStage: 'feed' }));
@@ -286,9 +295,11 @@ export function useMatchmakingDemo() {
     state,
     fAlert: state.fStage === 'alert',
     fPool: state.fStage === 'pool',
+    fSkipped: state.fStage === 'skipped',
     fMatched: state.fStage === 'matched',
     iAlert: state.iStage === 'alert',
     iFeed: state.iStage === 'feed' || state.iStage === 'waiting',
+    iSkipped: state.iStage === 'skipped',
     iWaiting: state.iStage === 'waiting',
     iMatched: state.iStage === 'matched',
     feedEmpty: feed.length === 0,
@@ -315,7 +326,8 @@ export function useMatchmakingDemo() {
     error,
     join: () => { void join(); },
     leave: () => { void leave(); },
-    skip: () => {},
+    skipFounder,
+    skipInvestor,
     browse,
     open,
     closeDetail,

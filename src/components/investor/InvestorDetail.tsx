@@ -1,4 +1,5 @@
 import type { DecoratedFounder } from '../../types';
+import { Avatar } from '../Avatar';
 
 interface InvestorDetailProps {
   detail: DecoratedFounder | null;
@@ -28,22 +29,7 @@ export function InvestorDetail({ detail, showReasons, closeDetail }: InvestorDet
         ))}
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
-        <span
-          style={{
-            width: 38,
-            height: 38,
-            flex: 'none',
-            borderRadius: '50%',
-            background: 'var(--color-accent-800)',
-            color: 'var(--color-accent-100)',
-            display: 'grid',
-            placeItems: 'center',
-            fontSize: 13,
-            fontFamily: 'var(--font-heading)',
-          }}
-        >
-          {detail.initials}
-        </span>
+        <Avatar logoUrl={detail.logoUrl} initials={detail.initials} size={38} fontSize={13} />
         <div>
           <div style={{ fontSize: 14 }}>{detail.founder}</div>
           <div style={{ fontSize: 11, color: 'color-mix(in srgb, #e9e9ed 50%, transparent)' }}>{detail.role}</div>

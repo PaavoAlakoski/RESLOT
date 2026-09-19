@@ -4,6 +4,7 @@ export type FounderProfile = {
   score: number;
   seeking: string;
   initials: string;
+  logoUrl: string;
   founder: string;
   role: string;
   blurb: string;
@@ -24,8 +25,8 @@ export type DecoratedFounder = Omit<FounderProfile, 'chips'> & {
   pick: () => void;
 };
 
-export type FounderStage = 'alert' | 'pool' | 'matched';
-export type InvestorStage = 'alert' | 'feed' | 'waiting' | 'matched';
+export type FounderStage = 'alert' | 'pool' | 'skipped' | 'matched';
+export type InvestorStage = 'alert' | 'feed' | 'skipped' | 'waiting' | 'matched';
 
 export type MatchmakingState = {
   fStage: FounderStage;

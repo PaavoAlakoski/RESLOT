@@ -13,6 +13,7 @@ export const startupProfiles = startupsDocument.startups.map((startup) => ({
   founder: startup.founder.name,
   role: startup.founder.title,
   initials: initials(startup.founder.name),
+  logoUrl: startup.logo_url,
   industry: startup.industry,
   tagline: startup.tagline,
   stage: startup.funding_stage,
@@ -49,9 +50,9 @@ export const vcProfiles = [{
 export const initialAvailableStartupIds = ['2', '9', '20', '29', '30', '36', '43', '54'];
 
 export const locations = [
-  { table: '12B', hall: 'Hall 4' },
-  { table: '8A', hall: 'Hall 3' },
-  { table: '21C', hall: 'Hall 5' },
+  { table: '12B', hall: 'Meeting area' },
+  { table: '8A', hall: 'Meeting area' },
+  { table: '21C', hall: 'Meeting area' },
 ];
 
 export const dataMetadata = {

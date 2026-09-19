@@ -13,8 +13,9 @@ export function InvestorAlert({ clock, browse, skip }: InvestorAlertProps) {
         </span>
         <span className="tag tag-outline">starts in {clock}</span>
       </div>
-      <h3 style={{ margin: '0 0 10px', fontSize: 27 }}>Your 14:30 just opened up.</h3>
+      <h3 style={{ margin: '0 0 10px', fontSize: 27 }}>Your 14:30 meeting was canceled.</h3>
       <p style={{ margin: 0, fontSize: 14, color: 'color-mix(in srgb, #e9e9ed 62%, transparent)' }}>Nimbus Foundry cancelled.</p>
+      <p style={{ margin: '6px 0 0', fontSize: 13, color: 'var(--color-accent-300)' }}>Next meeting at 15:30.</p>
       <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
         <button className="btn btn-primary btn-block" style={{ height: 48, fontSize: 15 }} onClick={browse}>
           See founders in the pool

@@ -4,6 +4,7 @@ export type ApiStartup = {
   founder: string;
   role: string;
   initials: string;
+  logoUrl: string;
   industry: string;
   tagline: string;
   stage: string;
