@@ -5,6 +5,7 @@ export type ApiStartup = {
   role: string;
   initials: string;
   logoUrl: string;
+  photoUrl: string;
   industry: string;
   tagline: string;
   stage: string;
@@ -29,6 +30,7 @@ export type ApiVc = {
   partner: string;
   role: string;
   initials: string;
+  photoUrl: string;
   thesis: string;
   stageFocus: string[];
   industries: string[];

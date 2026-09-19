@@ -16,7 +16,6 @@ function initialState(): MatchmakingState {
     fStage: 'alert',
     iStage: 'alert',
     joined: false,
-    detailId: null,
     invited: false,
     inviteLeft: 0,
     pendingId: null,
@@ -157,9 +156,6 @@ export function useMatchmakingDemo() {
     void refreshCandidates();
   }, [refreshCandidates]);
 
-  const open = useCallback((id: string) => setState((current) => ({ ...current, detailId: id })), []);
-  const closeDetail = useCallback(() => setState((current) => ({ ...current, detailId: null })), []);
-
   const pick = useCallback(async (id: string) => {
     setLoading(true);
     setError(null);
@@ -173,7 +169,6 @@ export function useMatchmakingDemo() {
         iStage: 'waiting',
         waitLeft: CONFIRM_WINDOW,
         declinedBy: null,
-        detailId: null,
         invited: id === FOUNDER_ID,
         inviteLeft: id === FOUNDER_ID ? CONFIRM_WINDOW : 0,
       }));
@@ -279,11 +274,9 @@ export function useMatchmakingDemo() {
     scoreColor: profile.score >= 8 ? 'var(--color-accent-300)' : profile.score >= 6 ? 'var(--color-neutral-300)' : 'var(--color-neutral-500)',
     chips: profile.chips.map((label) => ({ label })),
     isNew: profile.id === FOUNDER_ID && state.justJoined,
-    open: () => open(profile.id),
     pick: () => { void pick(profile.id); },
-  })), [open, pick, profiles, state.justJoined]);
+  })), [pick, profiles, state.justJoined]);
 
-  const detail = state.detailId ? feed.find((profile) => profile.id === state.detailId) ?? null : null;
   const pending = state.pendingId ? profiles.find((profile) => profile.id === state.pendingId) : null;
   const mm = Math.floor(state.secs / 60);
   const clock = `${mm}:${String(state.secs % 60).padStart(2, '0')}`;
@@ -312,7 +305,6 @@ export function useMatchmakingDemo() {
     pendingName: pending?.name ?? '',
     declinedBy: state.declinedBy,
     feed,
-    detail,
     showReasons: true,
     fProfile: state.fProfile,
     iProfile: state.iProfile,
@@ -329,8 +321,6 @@ export function useMatchmakingDemo() {
     skipFounder,
     skipInvestor,
     browse,
-    open,
-    closeDetail,
     pick: (id: string) => { void pick(id); },
     cancelPick: () => { void cancelPick(); },
     accept: () => { void accept(); },

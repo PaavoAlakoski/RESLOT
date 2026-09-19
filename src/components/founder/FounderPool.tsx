@@ -4,6 +4,12 @@ interface FounderPoolProps {
   leave: () => void;
 }
 
+function describeBrowsing(count: number): string {
+  if (count === 0) return 'No investors are looking now.';
+  if (count === 1) return '1 investor is looking now.';
+  return `${count} investors are looking now.`;
+}
+
 export function FounderPool({ clock, browsing, leave }: FounderPoolProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', animation: 'noct-rise .4s ease both' }}>
@@ -53,7 +59,7 @@ export function FounderPool({ clock, browsing, leave }: FounderPoolProps) {
         </div>
         <div>
           <h4 style={{ margin: '0 0 6px' }}>You're in the pool</h4>
-          <p style={{ margin: 0, fontSize: 13, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{browsing} investors are looking now.</p>
+          <p style={{ margin: 0, fontSize: 13, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{describeBrowsing(browsing)}</p>
         </div>
       </div>
       <div style={{ marginTop: 'auto' }}>

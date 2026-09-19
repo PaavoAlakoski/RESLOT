@@ -5,9 +5,10 @@ interface AvatarProps {
   initials: string;
   size: number;
   fontSize?: number;
+  fit?: 'contain' | 'cover';
 }
 
-export function Avatar({ logoUrl, initials, size, fontSize }: AvatarProps) {
+export function Avatar({ logoUrl, initials, size, fontSize, fit = 'contain' }: AvatarProps) {
   const [failed, setFailed] = useState(false);
   const showLogo = Boolean(logoUrl) && !failed;
 
@@ -18,7 +19,7 @@ export function Avatar({ logoUrl, initials, size, fontSize }: AvatarProps) {
         height: size,
         flex: 'none',
         borderRadius: '50%',
-        background: showLogo ? '#fff' : 'var(--color-accent-800)',
+        background: showLogo && fit === 'contain' ? '#fff' : 'var(--color-accent-800)',
         color: 'var(--color-accent-100)',
         display: 'grid',
         placeItems: 'center',
@@ -32,7 +33,7 @@ export function Avatar({ logoUrl, initials, size, fontSize }: AvatarProps) {
           src={logoUrl}
           alt=""
           onError={() => setFailed(true)}
-          style={{ width: '70%', height: '70%', objectFit: 'contain' }}
+          style={{ width: fit === 'cover' ? '100%' : '70%', height: fit === 'cover' ? '100%' : '70%', objectFit: fit }}
         />
       ) : (
         initials

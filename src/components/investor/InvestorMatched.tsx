@@ -23,7 +23,7 @@ export function InvestorMatched({ clock, iProfile, iProfileLabel, toggleIProfile
         <span style={{ fontSize: 11, color: 'color-mix(in srgb, #e9e9ed 50%, transparent)' }}>in {clock}</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 22 }}>
-        <Avatar logoUrl={meeting.startup.logoUrl} initials={meeting.startup.initials} size={62} fontSize={20} />
+        <Avatar logoUrl={meeting.startup.photoUrl} initials={meeting.startup.initials} size={62} fontSize={20} fit="cover" />
         <div>
           <h4 style={{ margin: '0 0 2px' }}>{meeting.startup.founder}</h4>
           <div style={{ fontSize: 13, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{meeting.startup.role} · {meeting.startup.companyName}</div>

@@ -21,7 +21,6 @@ export type DecoratedFounder = Omit<FounderProfile, 'chips'> & {
   scoreColor: string;
   chips: Chip[];
   isNew: boolean;
-  open: () => void;
   pick: () => void;
 };
 
@@ -32,7 +31,6 @@ export type MatchmakingState = {
   fStage: FounderStage;
   iStage: InvestorStage;
   joined: boolean;
-  detailId: string | null;
   invited: boolean;
   inviteLeft: number;
   pendingId: string | null;

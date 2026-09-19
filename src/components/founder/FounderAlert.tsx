@@ -1,3 +1,5 @@
+import { CalendarSlot } from '../CalendarSlot';
+
 interface FounderAlertProps {
   clock: string;
   join: () => void;
@@ -13,9 +15,11 @@ export function FounderAlert({ clock, join, skip }: FounderAlertProps) {
         </span>
         <span className="tag tag-outline">starts in {clock}</span>
       </div>
-      <h3 style={{ margin: '0 0 10px', fontSize: 27 }}>Your 14:30 meeting was canceled.</h3>
-      <p style={{ margin: 0, fontSize: 14, color: 'color-mix(in srgb, #e9e9ed 62%, transparent)' }}>Marek Sobol (Rivermark Capital) cancelled.</p>
-      <p style={{ margin: '6px 0 0', fontSize: 13, color: 'var(--color-accent-300)' }}>Next meeting at 15:30.</p>
+      <h3 style={{ margin: '0 0 16px', fontSize: 27 }}>Your 14:30 meeting was canceled.</h3>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+        <CalendarSlot time="14:30" status="Canceled" tone="muted" title="Marek Sobol" subtitle="Rivermark Capital · Cancelled" />
+        <CalendarSlot time="15:30" status="Next" tone="accent" title="Next meeting" subtitle="Your next scheduled meeting today." />
+      </div>
       <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
         <button className="btn btn-primary btn-block" style={{ height: 48, fontSize: 15 }} onClick={join}>
           Join the pool for 14:30

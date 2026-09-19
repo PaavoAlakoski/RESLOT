@@ -1,5 +1,6 @@
 import type { Meeting } from '../../api/liveMatch';
 import { MeetingBrief } from '../MeetingBrief';
+import { Avatar } from '../Avatar';
 
 interface FounderMatchedProps {
   clock: string;
@@ -22,9 +23,7 @@ export function FounderMatched({ clock, fProfile, fProfileLabel, toggleFProfile,
         <span style={{ fontSize: 11, color: 'color-mix(in srgb, #e9e9ed 50%, transparent)' }}>in {clock}</span>
       </div>
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 22 }}>
-        <span style={{ width: 62, height: 62, flex: 'none', borderRadius: '50%', background: 'var(--color-accent-800)', color: 'var(--color-accent-100)', display: 'grid', placeItems: 'center', fontSize: 20, fontFamily: 'var(--font-heading)' }}>
-          {meeting.vc.initials}
-        </span>
+        <Avatar logoUrl={meeting.vc.photoUrl} initials={meeting.vc.initials} size={62} fontSize={20} fit="cover" />
         <div>
           <h4 style={{ margin: '0 0 2px' }}>{meeting.vc.partner}</h4>
           <div style={{ fontSize: 13, color: 'color-mix(in srgb, #e9e9ed 60%, transparent)' }}>{meeting.vc.role} · {meeting.vc.firmName}</div>
