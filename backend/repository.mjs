@@ -35,6 +35,12 @@ export const vcProfiles = [{
   role: leadPartner.title,
   initials: initials(leadPartner.name),
   photoUrl: leadPartner.photo_url,
+  partners: rawVc.partners.map((p) => ({
+    name: p.name,
+    title: p.title,
+    initials: initials(p.name),
+    photoUrl: p.photo_url,
+  })),
   thesis: rawVc.investment_thesis.description,
   stageFocus: rawVc.investment_thesis.stage_focus,
   industries: rawVc.investment_thesis.industries,

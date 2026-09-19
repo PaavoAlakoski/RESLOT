@@ -15,7 +15,7 @@ export function InvestorDevice({ hook, now }: InvestorDeviceProps) {
   return (
     <IOSDevice dark time={now}>
       <div style={{ height: '100%', display: 'flex', flexDirection: 'column', background: 'var(--color-bg)', padding: '54px 20px 34px', position: 'relative', overflow: 'hidden' }}>
-        {hook.iAlert && <InvestorAlert clock={hook.clock} browse={hook.browse} skip={hook.skipInvestor} />}
+        {hook.iAlert && <InvestorAlert clock={hook.clock} browse={hook.browse} skip={hook.skipInvestor} nextStartup={hook.nextStartup} />}
 
         {hook.iFeed && <InvestorFeed clock={hook.clock} feed={hook.feed} feedEmpty={hook.feedEmpty} declinedBy={hook.declinedBy} showReasons={hook.showReasons} />}
 

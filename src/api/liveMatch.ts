@@ -31,6 +31,7 @@ export type ApiVc = {
   role: string;
   initials: string;
   photoUrl: string;
+  partners: Array<{ name: string; title: string; initials: string; photoUrl: string }>;
   thesis: string;
   stageFocus: string[];
   industries: string[];

@@ -1,12 +1,19 @@
 import { CalendarSlot } from '../CalendarSlot';
 
+interface NextPartner {
+  name: string;
+  title: string;
+}
+
 interface FounderAlertProps {
   clock: string;
   join: () => void;
   skip: () => void;
+  nextPartner: NextPartner | null;
+  nextFirmName: string;
 }
 
-export function FounderAlert({ clock, join, skip }: FounderAlertProps) {
+export function FounderAlert({ clock, join, skip, nextPartner, nextFirmName }: FounderAlertProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', animation: 'noct-rise .4s ease both' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 26 }}>
@@ -15,14 +22,20 @@ export function FounderAlert({ clock, join, skip }: FounderAlertProps) {
         </span>
         <span className="tag tag-outline">starts in {clock}</span>
       </div>
-      <h3 style={{ margin: '0 0 16px', fontSize: 27 }}>Your 14:30 meeting was canceled.</h3>
+      <h3 style={{ margin: '0 0 16px', fontSize: 27 }}>Your 14:30 meeting was cancelled.</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-        <CalendarSlot time="14:30" status="Canceled" tone="muted" title="Marek Sobol" subtitle="Rivermark Capital · Cancelled" />
-        <CalendarSlot time="15:30" status="Next" tone="accent" title="Next meeting" subtitle="Your next scheduled meeting today." />
+        <CalendarSlot time="14:30" status="Cancelled" tone="cancelled" title="Marek Sobol" subtitle="Rivermark Capital" />
+        <CalendarSlot
+          time="15:30"
+          status="Next"
+          tone="accent"
+          title={nextPartner ? nextPartner.name : 'Loading…'}
+          subtitle={nextPartner ? `${nextPartner.title} · ${nextFirmName}` : undefined}
+        />
       </div>
       <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: 10 }}>
         <button className="btn btn-primary btn-block" style={{ height: 48, fontSize: 15 }} onClick={join}>
-          Join the pool for 14:30
+          Find new meeting for 14:30
         </button>
         <button className="btn btn-ghost" style={{ alignSelf: 'center' }} onClick={skip}>
           Keep the slot free

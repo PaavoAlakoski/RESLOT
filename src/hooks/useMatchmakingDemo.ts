@@ -7,6 +7,7 @@ export type MatchmakingDemoReturn = ReturnType<typeof useMatchmakingDemo>;
 
 const FOUNDER_ID = '33';
 const VC_ID = 'tundra-peak';
+const NEXT_STARTUP_ID = '9';
 const CONFIRM_WINDOW = 60;
 const POOL_COUNTDOWN = 252;
 const SLOT_MIN = 14 * 60 + 30;
@@ -57,6 +58,7 @@ export function useMatchmakingDemo() {
   const [profiles, setProfiles] = useState<FounderProfile[]>([]);
   const [vc, setVc] = useState<ApiVc | null>(null);
   const [founderStartup, setFounderStartup] = useState<ApiStartup | null>(null);
+  const [nextStartup, setNextStartup] = useState<ApiStartup | null>(null);
   const [meeting, setMeeting] = useState<Meeting | null>(null);
   const [apiMode, setApiMode] = useState('connecting');
   const [loading, setLoading] = useState(false);
@@ -69,11 +71,17 @@ export function useMatchmakingDemo() {
   }, []);
 
   useEffect(() => {
-    Promise.all([liveMatchApi.health(), liveMatchApi.vc(VC_ID), liveMatchApi.startup(FOUNDER_ID)])
-      .then(([health, vcProfile, startup]) => {
+    Promise.all([
+      liveMatchApi.health(),
+      liveMatchApi.vc(VC_ID),
+      liveMatchApi.startup(FOUNDER_ID),
+      liveMatchApi.startup(NEXT_STARTUP_ID),
+    ])
+      .then(([health, vcProfile, startup, next]) => {
         setApiMode(health.aiMode);
         setVc(vcProfile);
         setFounderStartup(startup);
+        setNextStartup(next);
         setError(null);
       })
       .catch(reportError);
@@ -311,7 +319,9 @@ export function useMatchmakingDemo() {
     fProfileLabel: state.fProfile ? 'Hide AI meeting brief' : 'View AI meeting brief',
     iProfileLabel: state.iProfile ? 'Hide AI meeting brief' : 'View AI meeting brief',
     vc,
+    nextPartner: vc?.partners?.[1] ?? vc?.partners?.[0] ?? null,
     founderStartup,
+    nextStartup,
     meeting,
     apiMode,
     loading,
