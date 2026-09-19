@@ -1,182 +1,1373 @@
 {
   "meta": {
-    "disclaimer": "MOCK / PLACEHOLDER DATA. The firm name, partners, thesis, check sizes, and investment list in this file are synthetically generated for prototyping a website UI. None of it represents a real venture capital firm, real people, or real investment activity. Do not publish this data as fact — replace it with verified, sourced data before this goes live. The previous_investments entries reference startup_id values from the companion slush_startups_mock_data.json file (also fictional) so the two datasets can be cross-linked in a UI.",
+    "disclaimer": "MOCK / PLACEHOLDER DATA. Every firm name, partner, thesis, check size, and investment list in this file is synthetically generated for prototyping a website UI. None of it represents a real venture capital firm, real people, or real investment activity. Do not publish this data as fact — replace it with verified, sourced data before this goes live. The previous_investments entries reference startup_id values from the companion slush_startups_mock_data.json file (also fictional) so the two datasets can be cross-linked in a UI.",
     "generated": "2026-09-18",
     "schema_version": "1.0",
-    "companion_file": "slush_startups_mock_data.json"
+    "companion_file": "slush_startups_mock_data.json",
+    "record_count": 11
   },
-  "firm": {
-    "id": 1,
-    "firm_name": "Tundra Peak Ventures",
-    "tagline": "Early-stage capital for technical founders building hard-to-copy products.",
-    "description": "Tundra Peak Ventures is an early-stage venture capital firm that backs technical, product-obsessed founders building infrastructure-heavy or regulated products. The firm typically leads first institutional rounds for Nordic and European startups, with capacity to follow on through Series A.",
-    "founded_year": 2015,
-    "hq_city": "Helsinki",
-    "hq_country": "Finland",
-    "website": "https://tundrapeakvc.example",
-    "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Tundra%20Peak%20Ventures",
-    "check_size_usd": {
-      "typical_min": 150000,
-      "typical_max": 6000000,
-      "by_stage": [
+  "firms": [
+    {
+      "id": 1,
+      "firm_name": "Tundra Peak Ventures",
+      "tagline": "Early-stage capital for technical founders building hard-to-copy products.",
+      "description": "Tundra Peak Ventures is an early-stage venture capital firm that backs technical, product-obsessed founders building infrastructure-heavy or regulated products. The firm typically leads first institutional rounds for Nordic and European startups, with capacity to follow on through Series A.",
+      "founded_year": 2015,
+      "hq_city": "Helsinki",
+      "hq_country": "Finland",
+      "website": "https://tundrapeakvc.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Tundra%20Peak%20Ventures",
+      "check_size_usd": {
+        "typical_min": 150000,
+        "typical_max": 6000000,
+        "by_stage": [
+          {
+            "stage": "Pre-seed",
+            "min": 150000,
+            "max": 500000
+          },
+          {
+            "stage": "Seed",
+            "min": 500000,
+            "max": 2500000
+          },
+          {
+            "stage": "Series A (follow-on)",
+            "min": 2500000,
+            "max": 6000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Pre-seed",
+          "Seed",
+          "Series A"
+        ],
+        "industries": [
+          "Climate & Energy",
+          "Developer Tools",
+          "AI / Machine Learning",
+          "Healthtech",
+          "Fintech"
+        ],
+        "geographies": [
+          "Nordics",
+          "Europe",
+          "Selectively global"
+        ],
+        "description": "Looking for technical founding teams solving problems with real switching costs — climate and energy infrastructure, developer and data tooling, applied AI, regulated fintech, and clinical-grade healthtech. Prefers to be the first institutional check in, and wants ownership that supports a meaningful follow-on through Series A.",
+        "avoids": [
+          "Pure consumer social apps",
+          "Pre-product idea-stage with no technical co-founder",
+          "Capital-intensive hardware without a software moat"
+        ]
+      },
+      "partners": [
         {
-          "stage": "Pre-seed",
-          "min": 150000,
-          "max": 500000
+          "name": "Saga Lindqvist",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/women/88.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
         },
         {
-          "stage": "Seed",
-          "min": 500000,
-          "max": 2500000
-        },
-        {
-          "stage": "Series A (follow-on)",
-          "min": 2500000,
-          "max": 6000000
+          "name": "Kwame Berg",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/44.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
         }
       ],
-      "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
-    },
-    "investment_thesis": {
-      "stage_focus": [
-        "Pre-seed",
-        "Seed",
-        "Series A"
-      ],
-      "industries": [
-        "Climate & Energy",
-        "Developer Tools",
-        "AI / Machine Learning",
-        "Healthtech",
-        "Fintech"
-      ],
-      "geographies": [
-        "Nordics",
-        "Europe",
-        "Selectively global"
-      ],
-      "description": "Looking for technical founding teams solving problems with real switching costs — climate and energy infrastructure, developer and data tooling, applied AI, regulated fintech, and clinical-grade healthtech. Prefers to be the first institutional check in, and wants ownership that supports a meaningful follow-on through Series A.",
-      "avoids": [
-        "Pure consumer social apps",
-        "Pre-product idea-stage with no technical co-founder",
-        "Capital-intensive hardware without a software moat"
+      "previous_investments": [
+        {
+          "startup_id": 5,
+          "company_name": "Fjordify",
+          "industry": "Climate & Energy",
+          "hq_city": "Vilnius",
+          "hq_country": "Lithuania",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 10,
+          "company_name": "Vantekflow",
+          "industry": "Developer Tools",
+          "hq_city": "Dublin",
+          "hq_country": "Ireland",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 23,
+          "company_name": "Lumencore",
+          "industry": "AI / Machine Learning",
+          "hq_city": "Tallinn",
+          "hq_country": "Estonia",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 47,
+          "company_name": "Halcyonhub",
+          "industry": "Developer Tools",
+          "hq_city": "San Francisco",
+          "hq_country": "USA",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 7,
+          "company_name": "Nexovaio",
+          "industry": "Healthtech",
+          "hq_city": "New York",
+          "hq_country": "USA",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 32,
+          "company_name": "Ionishub",
+          "industry": "Fintech",
+          "hq_city": "Copenhagen",
+          "hq_country": "Denmark",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 21,
+          "company_name": "Driftlyflow",
+          "industry": "Climate & Energy",
+          "hq_city": "Nairobi",
+          "hq_country": "Kenya",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 36,
+          "company_name": "Quantasphere",
+          "industry": "AI / Machine Learning",
+          "hq_city": "Bangalore",
+          "hq_country": "India",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 84,
+          "company_name": "Ioniscore",
+          "industry": "Developer Tools",
+          "hq_city": "Paris",
+          "hq_country": "France",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 46,
+          "company_name": "Rivetpath",
+          "industry": "Climate & Energy",
+          "hq_city": "San Francisco",
+          "hq_country": "USA",
+          "stage_invested": "Seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Follow"
+        }
       ]
     },
-    "partners": [
-      {
-        "name": "Saga Lindqvist",
-        "title": "General Partner",
-        "photo_url": "https://randomuser.me/api/portraits/women/88.jpg",
-        "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+    {
+      "id": 2,
+      "firm_name": "Amber Forge Capital",
+      "tagline": "Growth capital for category leaders in fintech, crypto infrastructure, and consumer.",
+      "description": "Amber Forge Capital is a growth-stage venture firm investing from Seed through Series B. The firm backs companies that have already found a wedge into a large market and need capital and operating support to scale distribution.",
+      "founded_year": 2012,
+      "hq_city": "San Francisco",
+      "hq_country": "USA",
+      "website": "https://amberforgecapital.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Amber%20Forge%20Capital",
+      "check_size_usd": {
+        "typical_min": 2000000,
+        "typical_max": 20000000,
+        "by_stage": [
+          {
+            "stage": "Seed",
+            "min": 2000000,
+            "max": 4000000
+          },
+          {
+            "stage": "Series A",
+            "min": 4000000,
+            "max": 10000000
+          },
+          {
+            "stage": "Series B",
+            "min": 10000000,
+            "max": 20000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
       },
-      {
-        "name": "Kwame Berg",
-        "title": "General Partner",
-        "photo_url": "https://randomuser.me/api/portraits/men/44.jpg",
-        "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
-      }
-    ],
-    "previous_investments": [
-      {
-        "startup_id": 5,
-        "company_name": "Fjordify",
-        "industry": "Climate & Energy",
-        "hq_city": "Vilnius",
-        "hq_country": "Lithuania",
-        "stage_invested": "Seed",
-        "year_invested": 2022,
-        "lead_or_follow": "Lead"
+      "investment_thesis": {
+        "stage_focus": [
+          "Seed",
+          "Series A",
+          "Series B"
+        ],
+        "industries": [
+          "Fintech",
+          "Web3 / Crypto Infra",
+          "Consumer Apps"
+        ],
+        "geographies": [
+          "North America",
+          "Europe",
+          "Global"
+        ],
+        "description": "Looking for fintech, crypto infrastructure, and consumer products with proven early traction and a clear path to category leadership. Writes larger checks to help winners consolidate their market.",
+        "avoids": [
+          "Unproven pre-revenue concepts",
+          "Single-country-only regulatory plays"
+        ]
       },
-      {
-        "startup_id": 10,
-        "company_name": "Vantekflow",
-        "industry": "Developer Tools",
-        "hq_city": "Dublin",
-        "hq_country": "Ireland",
-        "stage_invested": "Seed",
-        "year_invested": 2023,
-        "lead_or_follow": "Lead"
+      "partners": [
+        {
+          "name": "Elena Rossi",
+          "title": "Managing Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/24.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Marcus Webb",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/11.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Aditi Bhatt",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/16.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 93,
+          "company_name": "Terrawave",
+          "industry": "Fintech",
+          "hq_city": "Singapore",
+          "hq_country": "Singapore",
+          "stage_invested": "Series A",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 48,
+          "company_name": "Boundely",
+          "industry": "Web3 / Crypto Infra",
+          "hq_city": "Stockholm",
+          "hq_country": "Sweden",
+          "stage_invested": "Series A",
+          "year_invested": 2021,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 12,
+          "company_name": "Fenwickstack",
+          "industry": "Consumer Apps",
+          "hq_city": "Barcelona",
+          "hq_country": "Spain",
+          "stage_invested": "Series B",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 77,
+          "company_name": "Zenarisloop",
+          "industry": "Consumer Apps",
+          "hq_city": "Sao Paulo",
+          "hq_country": "Brazil",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 66,
+          "company_name": "Junoify",
+          "industry": "Fintech",
+          "hq_city": "Tallinn",
+          "hq_country": "Estonia",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 44,
+          "company_name": "Orbissync",
+          "industry": "Web3 / Crypto Infra",
+          "hq_city": "Munich",
+          "hq_country": "Germany",
+          "stage_invested": "Series A",
+          "year_invested": 2024,
+          "lead_or_follow": "Follow"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "firm_name": "Bramblewood Partners",
+      "tagline": "The first check for first-time founders.",
+      "description": "Bramblewood Partners is a solo-GP pre-seed fund that writes small, fast checks before a company has a pitch deck polished enough for anyone else. Founded and run by a single investor who does the diligence personally.",
+      "founded_year": 2020,
+      "hq_city": "Berlin",
+      "hq_country": "Germany",
+      "website": "https://bramblewoodpartners.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Bramblewood%20Partners",
+      "check_size_usd": {
+        "typical_min": 50000,
+        "typical_max": 300000,
+        "by_stage": [
+          {
+            "stage": "Pre-seed",
+            "min": 50000,
+            "max": 300000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
       },
-      {
-        "startup_id": 23,
-        "company_name": "Lumencore",
-        "industry": "AI / Machine Learning",
-        "hq_city": "Tallinn",
-        "hq_country": "Estonia",
-        "stage_invested": "Pre-seed",
-        "year_invested": 2021,
-        "lead_or_follow": "Lead"
+      "investment_thesis": {
+        "stage_focus": [
+          "Pre-seed"
+        ],
+        "industries": [
+          "Biotech",
+          "Healthtech",
+          "Space & Deep Tech",
+          "Cybersecurity",
+          "Robotics & Hardware"
+        ],
+        "geographies": [
+          "Europe"
+        ],
+        "description": "Backs first-time, technical European founders at the idea or prototype stage, often before there's a company registered. Prioritizes founder conviction and domain depth over traction.",
+        "avoids": [
+          "Later-stage rounds",
+          "Founders without a technical co-founder"
+        ]
       },
-      {
-        "startup_id": 47,
-        "company_name": "Halcyonhub",
-        "industry": "Developer Tools",
-        "hq_city": "San Francisco",
-        "hq_country": "USA",
-        "stage_invested": "Seed",
-        "year_invested": 2022,
-        "lead_or_follow": "Follow"
+      "partners": [
+        {
+          "name": "Finn O'Callaghan",
+          "title": "Founder & General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/30.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 74,
+          "company_name": "Lumenworks",
+          "industry": "Biotech",
+          "hq_city": "Tel Aviv",
+          "hq_country": "Israel",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 9,
+          "company_name": "Solacebase",
+          "industry": "Healthtech",
+          "hq_city": "Dubai",
+          "hq_country": "UAE",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 100,
+          "company_name": "Fenwickforge",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Copenhagen",
+          "hq_country": "Denmark",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 69,
+          "company_name": "Vervewave",
+          "industry": "Cybersecurity",
+          "hq_city": "Vienna",
+          "hq_country": "Austria",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 26,
+          "company_name": "Vanteklabs",
+          "industry": "Robotics & Hardware",
+          "hq_city": "Lagos",
+          "hq_country": "Nigeria",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "firm_name": "Coastline Health Ventures",
+      "tagline": "Backing the next generation of clinical-grade health technology.",
+      "description": "Coastline Health Ventures is a specialist healthtech and biotech investor. The partners are former clinicians and biotech operators who invest in companies with a real regulatory and clinical strategy, not just a consumer wellness angle.",
+      "founded_year": 2017,
+      "hq_city": "Boston",
+      "hq_country": "USA",
+      "website": "https://coastlinehealthventures.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Coastline%20Health%20Ventures",
+      "check_size_usd": {
+        "typical_min": 1000000,
+        "typical_max": 8000000,
+        "by_stage": [
+          {
+            "stage": "Seed",
+            "min": 1000000,
+            "max": 3000000
+          },
+          {
+            "stage": "Series A",
+            "min": 3000000,
+            "max": 8000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
       },
-      {
-        "startup_id": 7,
-        "company_name": "Nexovaio",
-        "industry": "Healthtech",
-        "hq_city": "New York",
-        "hq_country": "USA",
-        "stage_invested": "Seed",
-        "year_invested": 2022,
-        "lead_or_follow": "Follow"
+      "investment_thesis": {
+        "stage_focus": [
+          "Seed",
+          "Series A"
+        ],
+        "industries": [
+          "Healthtech",
+          "Biotech"
+        ],
+        "geographies": [
+          "North America",
+          "Europe"
+        ],
+        "description": "Looking for founding teams with genuine clinical or regulatory expertise, tackling diagnosis, treatment, or care delivery problems with defensible data or IP.",
+        "avoids": [
+          "Consumer wellness apps without clinical validation",
+          "Uninsured cash-pay-only models"
+        ]
       },
-      {
-        "startup_id": 32,
-        "company_name": "Ionishub",
-        "industry": "Fintech",
-        "hq_city": "Copenhagen",
-        "hq_country": "Denmark",
-        "stage_invested": "Pre-seed",
-        "year_invested": 2022,
-        "lead_or_follow": "Lead"
+      "partners": [
+        {
+          "name": "Dr. Naomi Chen",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/19.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Robert Okafor",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/36.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 7,
+          "company_name": "Nexovaio",
+          "industry": "Healthtech",
+          "hq_city": "New York",
+          "hq_country": "USA",
+          "stage_invested": "Series A",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 68,
+          "company_name": "Axionscale",
+          "industry": "Healthtech",
+          "hq_city": "Amsterdam",
+          "hq_country": "Netherlands",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 27,
+          "company_name": "Fenwickloop",
+          "industry": "Biotech",
+          "hq_city": "Amsterdam",
+          "hq_country": "Netherlands",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 64,
+          "company_name": "Cobaltfield",
+          "industry": "Biotech",
+          "hq_city": "Berlin",
+          "hq_country": "Germany",
+          "stage_invested": "Seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 39,
+          "company_name": "Driftlyify",
+          "industry": "Biotech",
+          "hq_city": "Seoul",
+          "hq_country": "South Korea",
+          "stage_invested": "Series A",
+          "year_invested": 2021,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 16,
+          "company_name": "Halcyonfield",
+          "industry": "Healthtech",
+          "hq_city": "Oslo",
+          "hq_country": "Norway",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "firm_name": "Deepwell Robotics Fund",
+      "tagline": "Capital for hardware, robotics, and deep tech that takes years to build.",
+      "description": "Deepwell Robotics Fund invests in capital-intensive robotics, aerospace, and deep tech companies at Series A and B, where most generalist funds won't go because of long R&D timelines.",
+      "founded_year": 2016,
+      "hq_city": "Munich",
+      "hq_country": "Germany",
+      "website": "https://deepwellroboticsfund.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Deepwell%20Robotics%20Fund",
+      "check_size_usd": {
+        "typical_min": 3000000,
+        "typical_max": 15000000,
+        "by_stage": [
+          {
+            "stage": "Series A",
+            "min": 3000000,
+            "max": 8000000
+          },
+          {
+            "stage": "Series B",
+            "min": 8000000,
+            "max": 15000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
       },
-      {
-        "startup_id": 21,
-        "company_name": "Driftlyflow",
-        "industry": "Climate & Energy",
-        "hq_city": "Nairobi",
-        "hq_country": "Kenya",
-        "stage_invested": "Seed",
-        "year_invested": 2022,
-        "lead_or_follow": "Lead"
+      "investment_thesis": {
+        "stage_focus": [
+          "Series A",
+          "Series B"
+        ],
+        "industries": [
+          "Robotics & Hardware",
+          "Space & Deep Tech"
+        ],
+        "geographies": [
+          "Europe",
+          "Global"
+        ],
+        "description": "Backs founding teams building physical, hard-to-replicate technology — robotics, satellites, advanced manufacturing — who need patient capital across long development cycles.",
+        "avoids": [
+          "Software-only companies",
+          "Pre-prototype hardware"
+        ]
       },
-      {
-        "startup_id": 36,
-        "company_name": "Quantasphere",
-        "industry": "AI / Machine Learning",
-        "hq_city": "Bangalore",
-        "hq_country": "India",
-        "stage_invested": "Pre-seed",
-        "year_invested": 2023,
-        "lead_or_follow": "Follow"
+      "partners": [
+        {
+          "name": "Stefan Krause",
+          "title": "Managing Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/20.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Yuki Tanaka",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/26.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 49,
+          "company_name": "Junoflow",
+          "industry": "Robotics & Hardware",
+          "hq_city": "Bangalore",
+          "hq_country": "India",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 19,
+          "company_name": "Fjordworks",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Mexico City",
+          "hq_country": "Mexico",
+          "stage_invested": "Series A",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 45,
+          "company_name": "Terrasync",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Oslo",
+          "hq_country": "Norway",
+          "stage_invested": "Series B",
+          "year_invested": 2025,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 90,
+          "company_name": "Quantacore",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Dublin",
+          "hq_country": "Ireland",
+          "stage_invested": "Series A",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "firm_name": "Evergreen Climate Partners",
+      "tagline": "Investing in the infrastructure of a lower-carbon economy.",
+      "description": "Evergreen Climate Partners funds companies decarbonizing energy, industry, and food systems. The firm looks for measurable climate impact alongside venture-scale economics.",
+      "founded_year": 2019,
+      "hq_city": "Copenhagen",
+      "hq_country": "Denmark",
+      "website": "https://evergreenclimatepartners.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Evergreen%20Climate%20Partners",
+      "check_size_usd": {
+        "typical_min": 500000,
+        "typical_max": 5000000,
+        "by_stage": [
+          {
+            "stage": "Seed",
+            "min": 500000,
+            "max": 2000000
+          },
+          {
+            "stage": "Series A",
+            "min": 2000000,
+            "max": 5000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
       },
-      {
-        "startup_id": 84,
-        "company_name": "Ioniscore",
-        "industry": "Developer Tools",
-        "hq_city": "Paris",
-        "hq_country": "France",
-        "stage_invested": "Pre-seed",
-        "year_invested": 2024,
-        "lead_or_follow": "Lead"
+      "investment_thesis": {
+        "stage_focus": [
+          "Seed",
+          "Series A"
+        ],
+        "industries": [
+          "Climate & Energy",
+          "Foodtech & Agtech"
+        ],
+        "geographies": [
+          "Europe",
+          "Global"
+        ],
+        "description": "Looking for founders cutting emissions or resource waste at the infrastructure level — energy systems, industrial processes, or food supply chains — with a credible path to measurable, verifiable impact.",
+        "avoids": [
+          "Carbon offset marketplaces without direct reduction",
+          "Consumer-only eco apps"
+        ]
       },
-      {
-        "startup_id": 46,
-        "company_name": "Rivetpath",
-        "industry": "Climate & Energy",
-        "hq_city": "San Francisco",
-        "hq_country": "USA",
-        "stage_invested": "Seed",
-        "year_invested": 2024,
-        "lead_or_follow": "Follow"
-      }
-    ]
-  }
+      "partners": [
+        {
+          "name": "Ida Sorensen",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/34.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Tomasz Nowak",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/17.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 20,
+          "company_name": "Clarionwave",
+          "industry": "Climate & Energy",
+          "hq_city": "Vilnius",
+          "hq_country": "Lithuania",
+          "stage_invested": "Seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 50,
+          "company_name": "Solvorapath",
+          "industry": "Climate & Energy",
+          "hq_city": "Tokyo",
+          "hq_country": "Japan",
+          "stage_invested": "Series A",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 58,
+          "company_name": "Ionispath",
+          "industry": "Foodtech & Agtech",
+          "hq_city": "Stockholm",
+          "hq_country": "Sweden",
+          "stage_invested": "Series A",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 24,
+          "company_name": "Solvorasphere",
+          "industry": "Foodtech & Agtech",
+          "hq_city": "Bangalore",
+          "hq_country": "India",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 94,
+          "company_name": "Wilobase",
+          "industry": "Foodtech & Agtech",
+          "hq_city": "Amsterdam",
+          "hq_country": "Netherlands",
+          "stage_invested": "Seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 5,
+          "company_name": "Fjordify",
+          "industry": "Climate & Energy",
+          "hq_city": "Vilnius",
+          "hq_country": "Lithuania",
+          "stage_invested": "Seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "firm_name": "Foundry North",
+      "tagline": "Early checks for developer tools and security startups.",
+      "description": "Foundry North is a pre-seed and seed fund focused exclusively on developer tools and cybersecurity. The partners are former engineering leaders who invest with a strong opinion on product.",
+      "founded_year": 2018,
+      "hq_city": "Toronto",
+      "hq_country": "Canada",
+      "website": "https://foundrynorth.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Foundry%20North",
+      "check_size_usd": {
+        "typical_min": 200000,
+        "typical_max": 2000000,
+        "by_stage": [
+          {
+            "stage": "Pre-seed",
+            "min": 200000,
+            "max": 600000
+          },
+          {
+            "stage": "Seed",
+            "min": 600000,
+            "max": 2000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Pre-seed",
+          "Seed"
+        ],
+        "industries": [
+          "Developer Tools",
+          "Cybersecurity"
+        ],
+        "geographies": [
+          "North America",
+          "Europe"
+        ],
+        "description": "Backs technical founders building tools for other engineers — infrastructure, security, and developer productivity — usually as the first check after friends and family.",
+        "avoids": [
+          "Non-technical founding teams",
+          "Enterprise sales-led products with no product-led motion"
+        ]
+      },
+      "partners": [
+        {
+          "name": "James MacLeod",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/12.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Priya Chandran",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/18.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 79,
+          "company_name": "Ionisfield",
+          "industry": "Developer Tools",
+          "hq_city": "Copenhagen",
+          "hq_country": "Denmark",
+          "stage_invested": "Seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 81,
+          "company_name": "Cobaltify",
+          "industry": "Cybersecurity",
+          "hq_city": "New York",
+          "hq_country": "USA",
+          "stage_invested": "Seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 43,
+          "company_name": "Driftlypath",
+          "industry": "Cybersecurity",
+          "hq_city": "Vienna",
+          "hq_country": "Austria",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 33,
+          "company_name": "Aeroworks",
+          "industry": "Developer Tools",
+          "hq_city": "Tallinn",
+          "hq_country": "Estonia",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 95,
+          "company_name": "Quantaworks",
+          "industry": "Cybersecurity",
+          "hq_city": "Toronto",
+          "hq_country": "Canada",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 15,
+          "company_name": "Fjordstack",
+          "industry": "Developer Tools",
+          "hq_city": "Lagos",
+          "hq_country": "Nigeria",
+          "stage_invested": "Seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "firm_name": "Gateway Frontier Capital",
+      "tagline": "The local fund for founders building in Africa, Latin America, and Southeast Asia.",
+      "description": "Gateway Frontier Capital is a geography-first, sector-agnostic seed fund investing in high-growth markets across Africa, Latin America, and Southeast Asia, where the firm's partners have operated businesses themselves.",
+      "founded_year": 2021,
+      "hq_city": "Nairobi",
+      "hq_country": "Kenya",
+      "website": "https://gatewayfrontiercapital.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Gateway%20Frontier%20Capital",
+      "check_size_usd": {
+        "typical_min": 250000,
+        "typical_max": 2000000,
+        "by_stage": [
+          {
+            "stage": "Seed",
+            "min": 250000,
+            "max": 2000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Seed"
+        ],
+        "industries": [
+          "Mobility & Logistics",
+          "Consumer Apps",
+          "EdTech",
+          "Foodtech & Agtech",
+          "Fintech"
+        ],
+        "geographies": [
+          "Africa",
+          "Latin America",
+          "Southeast Asia"
+        ],
+        "description": "Sector-agnostic within its home markets: looking for founders solving infrastructure gaps in logistics, payments, education, and food distribution across fast-growing, underserved regions.",
+        "avoids": [
+          "Markets outside its three core regions",
+          "Pure B2B enterprise software"
+        ]
+      },
+      "partners": [
+        {
+          "name": "Adaeze Nwosu",
+          "title": "Managing Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/21.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Ravi Menon",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/14.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 4,
+          "company_name": "Pivotabase",
+          "industry": "Mobility & Logistics",
+          "hq_city": "Nairobi",
+          "hq_country": "Kenya",
+          "stage_invested": "Seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 55,
+          "company_name": "Ampliahub",
+          "industry": "Mobility & Logistics",
+          "hq_city": "Nairobi",
+          "hq_country": "Kenya",
+          "stage_invested": "Seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 14,
+          "company_name": "Vantekscale",
+          "industry": "EdTech",
+          "hq_city": "Cape Town",
+          "hq_country": "South Africa",
+          "stage_invested": "Seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 77,
+          "company_name": "Zenarisloop",
+          "industry": "Consumer Apps",
+          "hq_city": "Sao Paulo",
+          "hq_country": "Brazil",
+          "stage_invested": "Series A",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 73,
+          "company_name": "Zenarisly",
+          "industry": "Foodtech & Agtech",
+          "hq_city": "Sao Paulo",
+          "hq_country": "Brazil",
+          "stage_invested": "Seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 51,
+          "company_name": "Aeroshift",
+          "industry": "Fintech",
+          "hq_city": "Cape Town",
+          "hq_country": "South Africa",
+          "stage_invested": "Series A",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "firm_name": "Highline Growth Partners",
+      "tagline": "Late-stage capital to scale category winners globally.",
+      "description": "Highline Growth Partners is a sector-agnostic growth equity firm investing at Series B and beyond, once a company has established product-market fit and needs capital to scale internationally.",
+      "founded_year": 2010,
+      "hq_city": "New York",
+      "hq_country": "USA",
+      "website": "https://highlinegrowthpartners.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Highline%20Growth%20Partners",
+      "check_size_usd": {
+        "typical_min": 10000000,
+        "typical_max": 40000000,
+        "by_stage": [
+          {
+            "stage": "Series B",
+            "min": 10000000,
+            "max": 25000000
+          },
+          {
+            "stage": "Series C+",
+            "min": 25000000,
+            "max": 40000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Series B",
+          "Series C+"
+        ],
+        "industries": [
+          "Biotech",
+          "Climate & Energy",
+          "Mobility & Logistics",
+          "Space & Deep Tech"
+        ],
+        "geographies": [
+          "Global"
+        ],
+        "description": "Looking for proven, capital-efficient businesses with strong unit economics that are ready to scale into new geographies or verticals.",
+        "avoids": [
+          "Pre-Series-B companies",
+          "Unproven unit economics"
+        ]
+      },
+      "partners": [
+        {
+          "name": "William Hastings",
+          "title": "Managing Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/9.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Charlotte Byrne",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/5.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "David Kim",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/15.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 11,
+          "company_name": "Orbiswave",
+          "industry": "Biotech",
+          "hq_city": "Nairobi",
+          "hq_country": "Kenya",
+          "stage_invested": "Series B",
+          "year_invested": 2025,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 13,
+          "company_name": "Nexovapath",
+          "industry": "Climate & Energy",
+          "hq_city": "Singapore",
+          "hq_country": "Singapore",
+          "stage_invested": "Series B",
+          "year_invested": 2024,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 65,
+          "company_name": "Verveforge",
+          "industry": "Biotech",
+          "hq_city": "Singapore",
+          "hq_country": "Singapore",
+          "stage_invested": "Series B",
+          "year_invested": 2022,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 75,
+          "company_name": "Ionisgrid",
+          "industry": "Biotech",
+          "hq_city": "Sao Paulo",
+          "hq_country": "Brazil",
+          "stage_invested": "Series B",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 82,
+          "company_name": "Boundeio",
+          "industry": "Mobility & Logistics",
+          "hq_city": "Tel Aviv",
+          "hq_country": "Israel",
+          "stage_invested": "Series B",
+          "year_invested": 2021,
+          "lead_or_follow": "Lead"
+        },
+        {
+          "startup_id": 96,
+          "company_name": "Lumenflow",
+          "industry": "Biotech",
+          "hq_city": "Nairobi",
+          "hq_country": "Kenya",
+          "stage_invested": "Series B",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 45,
+          "company_name": "Terrasync",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Oslo",
+          "hq_country": "Norway",
+          "stage_invested": "Series B",
+          "year_invested": 2025,
+          "lead_or_follow": "Follow"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "firm_name": "Ironwood Angel Syndicate",
+      "tagline": "Small, fast checks from one angel, for anything worth betting on early.",
+      "description": "Ironwood Angel Syndicate is a solo-GP angel investing vehicle writing small, generalist pre-seed checks. Decisions are made in days, not months, and the fund takes bets across almost any category as long as the founder is exceptional.",
+      "founded_year": 2022,
+      "hq_city": "Austin",
+      "hq_country": "USA",
+      "website": "https://ironwoodangelsyndicate.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Ironwood%20Angel%20Syndicate",
+      "check_size_usd": {
+        "typical_min": 25000,
+        "typical_max": 150000,
+        "by_stage": [
+          {
+            "stage": "Pre-seed",
+            "min": 25000,
+            "max": 150000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Pre-seed"
+        ],
+        "industries": [
+          "Space & Deep Tech",
+          "Robotics & Hardware",
+          "Mobility & Logistics",
+          "Consumer Apps",
+          "Future of Work / SaaS"
+        ],
+        "geographies": [
+          "Global"
+        ],
+        "description": "Generalist and opportunistic: backs individual founders more than sectors, usually as one of the first checks into a company, often before there's a product.",
+        "avoids": [
+          "Later-stage rounds",
+          "Large syndicate deals requiring lead status"
+        ]
+      },
+      "partners": [
+        {
+          "name": "Jake Sullivan",
+          "title": "Lead Angel",
+          "photo_url": "https://randomuser.me/api/portraits/men/31.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 17,
+          "company_name": "Yonderworks",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Cape Town",
+          "hq_country": "South Africa",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 76,
+          "company_name": "Yonderstack",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Cape Town",
+          "hq_country": "South Africa",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 80,
+          "company_name": "Cryoloop",
+          "industry": "Space & Deep Tech",
+          "hq_city": "Riga",
+          "hq_country": "Latvia",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2024,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 87,
+          "company_name": "Rivetfield",
+          "industry": "Robotics & Hardware",
+          "hq_city": "Tel Aviv",
+          "hq_country": "Israel",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 89,
+          "company_name": "Verveio",
+          "industry": "Mobility & Logistics",
+          "hq_city": "Vilnius",
+          "hq_country": "Lithuania",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2025,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 98,
+          "company_name": "Nordhub",
+          "industry": "Consumer Apps",
+          "hq_city": "Dublin",
+          "hq_country": "Ireland",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2022,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 1,
+          "company_name": "Axionly",
+          "industry": "Future of Work / SaaS",
+          "hq_city": "Warsaw",
+          "hq_country": "Poland",
+          "stage_invested": "Pre-seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Follow"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "firm_name": "Junction Bridge Capital",
+      "tagline": "Applied AI investing, bridging Asia's two largest tech hubs.",
+      "description": "Junction Bridge Capital is an applied AI specialist fund with a dual base in Singapore and Tokyo, investing in machine learning companies solving concrete industry problems rather than building general-purpose models.",
+      "founded_year": 2020,
+      "hq_city": "Singapore",
+      "hq_country": "Singapore",
+      "website": "https://junctionbridgecapital.example",
+      "logo_url": "https://api.dicebear.com/9.x/shapes/svg?seed=Junction%20Bridge%20Capital",
+      "check_size_usd": {
+        "typical_min": 500000,
+        "typical_max": 6000000,
+        "by_stage": [
+          {
+            "stage": "Seed",
+            "min": 500000,
+            "max": 2500000
+          },
+          {
+            "stage": "Series A",
+            "min": 2500000,
+            "max": 6000000
+          }
+        ],
+        "note": "FICTIONAL figures for UI prototyping only — not a real fund's check sizes."
+      },
+      "investment_thesis": {
+        "stage_focus": [
+          "Seed",
+          "Series A"
+        ],
+        "industries": [
+          "AI / Machine Learning"
+        ],
+        "geographies": [
+          "Asia",
+          "Global"
+        ],
+        "description": "Looking for applied AI startups with a specific, defensible data advantage in a real industry — not general-purpose foundation model plays.",
+        "avoids": [
+          "Foundation model training companies",
+          "Thin API wrapper products"
+        ]
+      },
+      "partners": [
+        {
+          "name": "Mei Lin Tan",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/22.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        },
+        {
+          "name": "Haruto Sato",
+          "title": "General Partner",
+          "photo_url": "https://randomuser.me/api/portraits/men/23.jpg",
+          "photo_note": "Stock placeholder photo (randomuser.me test-data image set) standing in for this fictional person. NOT a real photo of this (nonexistent) founder — swap for a real, sourced photo before publishing real data."
+        }
+      ],
+      "previous_investments": [
+        {
+          "startup_id": 36,
+          "company_name": "Quantasphere",
+          "industry": "AI / Machine Learning",
+          "hq_city": "Bangalore",
+          "hq_country": "India",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 23,
+          "company_name": "Lumencore",
+          "industry": "AI / Machine Learning",
+          "hq_city": "Tallinn",
+          "hq_country": "Estonia",
+          "stage_invested": "Seed",
+          "year_invested": 2021,
+          "lead_or_follow": "Follow"
+        },
+        {
+          "startup_id": 92,
+          "company_name": "Rivetbase",
+          "industry": "AI / Machine Learning",
+          "hq_city": "Stockholm",
+          "hq_country": "Sweden",
+          "stage_invested": "Seed",
+          "year_invested": 2023,
+          "lead_or_follow": "Lead"
+        }
+      ]
+    }
+  ]
 }
